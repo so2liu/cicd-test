@@ -9,7 +9,8 @@ COPY --from=bladeai-cn-beijing.cr.volces.com/base/uv:0.9.8 /uv /usr/local/bin/uv
 
 # 先复制依赖文件并安装（利用 Docker 缓存层）
 COPY pyproject.toml ./
-RUN uv pip install --system -e .
+COPY uv.lock* ./
+RUN uv sync --frozen --no-dev
 
 # 再复制应用代码（代码变化不会导致依赖重装）
 COPY main.py ./
@@ -17,5 +18,5 @@ COPY main.py ./
 # 暴露端口
 EXPOSE 8000
 
-# 设置入口点
-CMD ["python", "main.py"]
+# 设置入口点（使用虚拟环境中的 Python）
+CMD [".venv/bin/python", "main.py"]
