@@ -8,8 +8,7 @@ WORKDIR /app
 COPY --from=bladeai-cn-beijing.cr.volces.com/base/uv:0.9.8 /uv /usr/local/bin/uv
 
 # 先复制依赖文件并安装（利用 Docker 缓存层）
-COPY pyproject.toml ./
-COPY uv.lock* ./
+COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-dev
 
 # 再复制应用代码（代码变化不会导致依赖重装）

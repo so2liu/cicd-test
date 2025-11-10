@@ -56,7 +56,7 @@ venv.bak/
 # UV 包管理器
 # ========================================
 .uv_cache/
-uv.lock
+# Note: uv.lock should be included for reproducible builds
 
 # ========================================
 # 测试和覆盖率
