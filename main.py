@@ -62,7 +62,7 @@ app = FastAPI(
 async def root():
     return {
         "message": "Welcome to Task Management API",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "docs": "/docs",
         "status": "ok"
     }
