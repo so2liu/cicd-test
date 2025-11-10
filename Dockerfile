@@ -1,5 +1,5 @@
-# 定义全局 ARG（支持通过 build-arg 切换镜像源）
-ARG UV_IMAGE=ghcr.io/astral-sh/uv:0.9.8
+# 定义全局 ARG（默认使用火山云镜像，GitHub Actions 通过 build-arg 覆盖）
+ARG UV_IMAGE=bladeai-cn-beijing.cr.volces.com/base/uv:0.9.8
 
 # UV 镜像阶段
 FROM ${UV_IMAGE} AS uv-image

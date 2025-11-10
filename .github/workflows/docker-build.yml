@@ -39,7 +39,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
-            type=sha,prefix={{date 'YYYYMMDD-HHmmss'}}-
+            type=raw,value=${{ github.run_number }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -51,6 +51,8 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64
+          build-args: |
+            UV_IMAGE=ghcr.io/astral-sh/uv:0.9.8
 
       - name: Output image info
         run: |
