@@ -9,7 +9,9 @@ COPY --from=bladeai-cn-beijing.cr.volces.com/base/uv:0.9.8 /uv /usr/local/bin/uv
 
 # 先复制依赖文件并安装（利用 Docker 缓存层）
 COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-dev
+# 使用 cache mount 缓存 UV 下载的包，即使在不同构建节点也能复用
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --frozen --no-dev
 
 # 再复制应用代码（代码变化不会导致依赖重装）
 COPY main.py ./
