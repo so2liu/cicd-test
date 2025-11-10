@@ -5,7 +5,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # 安装 UV 包管理器
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+COPY --from=bladeai-cn-beijing.cr.volces.com/base/uv:0.9.8 /uv /usr/local/bin/uv
 
 # 复制项目文件
 COPY pyproject.toml ./
