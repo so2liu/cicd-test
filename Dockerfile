@@ -7,12 +7,15 @@ WORKDIR /app
 # 安装 UV 包管理器
 COPY --from=bladeai-cn-beijing.cr.volces.com/base/uv:0.9.8 /uv /usr/local/bin/uv
 
-# 复制项目文件
+# 先复制依赖文件并安装（利用 Docker 缓存层）
 COPY pyproject.toml ./
+RUN uv pip install --system -e .
+
+# 再复制应用代码（代码变化不会导致依赖重装）
 COPY main.py ./
 
-# 安装项目依赖
-RUN uv pip install --system -e .
+# 暴露端口
+EXPOSE 8000
 
 # 设置入口点
 CMD ["python", "main.py"]
