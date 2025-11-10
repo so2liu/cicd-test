@@ -1,0 +1,198 @@
+# ========================================
+# 版本控制
+# ========================================
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+
+# ========================================
+# Python
+# ========================================
+# 字节码和缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 分发和打包
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# 安装日志
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ========================================
+# 虚拟环境
+# ========================================
+env/
+venv/
+ENV/
+.venv
+env.bak/
+venv.bak/
+
+# ========================================
+# UV 包管理器
+# ========================================
+.uv_cache/
+uv.lock
+
+# ========================================
+# 测试和覆盖率
+# ========================================
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+.hypothesis/
+nosetests.xml
+
+# ========================================
+# 类型检查器
+# ========================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ========================================
+# IDE 和编辑器
+# ========================================
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Eclipse
+.project
+.pydevproject
+.settings/
+
+# ========================================
+# 操作系统
+# ========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ========================================
+# CI/CD
+# ========================================
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+azure-pipelines.yml
+Jenkinsfile
+
+# ========================================
+# Docker
+# ========================================
+.dockerignore
+Dockerfile
+Dockerfile.*
+docker-compose*.yml
+.docker/
+
+# ========================================
+# 文档
+# ========================================
+docs/
+*.md
+LICENSE
+AUTHORS
+CHANGELOG
+CONTRIBUTING
+
+# 例外：如果你的应用需要 README，可以取消注释
+# !README.md
+
+# ========================================
+# 日志和数据库
+# ========================================
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+
+# ========================================
+# 环境变量和配置
+# ========================================
+.env
+.env.*
+.envrc
+*.local
+
+# ========================================
+# 临时文件
+# ========================================
+*.tmp
+*.temp
+*.bak
+*.swp
+.cache/
+
+# ========================================
+# 其他开发文件
+# ========================================
+.python-version
+.editorconfig
+.pre-commit-config.yaml
+Makefile
+requirements-dev.txt
+setup.py
+setup.cfg
